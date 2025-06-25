@@ -14,6 +14,18 @@
     <Filter Include="KamataEngine\Adapter">
       <UniqueIdentifier>{c6468eb4-788b-4a83-b207-a5f4804e56c5}</UniqueIdentifier>
     </Filter>
+    <Filter Include="math">
+      <UniqueIdentifier>{9add3968-68c8-4ba7-ba8b-9f39a805136d}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="palyer">
+      <UniqueIdentifier>{ab733547-514e-4a85-a88b-404122e118af}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="enemy">
+      <UniqueIdentifier>{e81c5d2c-db2d-44aa-89be-46f0d84c096e}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="scene">
+      <UniqueIdentifier>{279ad501-1f29-4190-9d95-f8aeed9c8d9b}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="C:\KamataEngine\DirectXGame\base\DirectXCommon.cpp">
@@ -37,6 +49,39 @@
     </ClCompile>
     <ClCompile Include="C:\KamataEngine\DirectXGame\base\StringUtility.cpp">
       <Filter>KamataEngine\Source</Filter>
+    </ClCompile>
+    <ClCompile Include="Particle.cpp">
+      <Filter>KamataEngine</Filter>
+    </ClCompile>
+    <ClCompile Include="Enemy.cpp">
+      <Filter>enemy</Filter>
+    </ClCompile>
+    <ClCompile Include="EnemyBullet.cpp">
+      <Filter>enemy</Filter>
+    </ClCompile>
+    <ClCompile Include="Player.cpp">
+      <Filter>palyer</Filter>
+    </ClCompile>
+    <ClCompile Include="PlayerBullet.cpp">
+      <Filter>palyer</Filter>
+    </ClCompile>
+    <ClCompile Include="IScene.cpp">
+      <Filter>scene</Filter>
+    </ClCompile>
+    <ClCompile Include="SceneDefine.cpp">
+      <Filter>KamataEngine</Filter>
+    </ClCompile>
+    <ClCompile Include="TitleScene.cpp">
+      <Filter>KamataEngine</Filter>
+    </ClCompile>
+    <ClCompile Include="Game.cpp">
+      <Filter>KamataEngine</Filter>
+    </ClCompile>
+    <ClCompile Include="ClearScene.cpp">
+      <Filter>KamataEngine</Filter>
+    </ClCompile>
+    <ClCompile Include="SceneManager.cpp">
+      <Filter>KamataEngine</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>
@@ -103,13 +148,42 @@
     <ClInclude Include="C:\KamataEngine\DirectXGame\3d\SpotLight.h">
       <Filter>KamataEngine\Include</Filter>
     </ClInclude>
-    <ClInclude Include="C:\KamataEngine\DirectXGame\math\Matrix4x4.h" />
-    <ClInclude Include="C:\KamataEngine\DirectXGame\math\Vector2.h" />
-    <ClInclude Include="C:\KamataEngine\DirectXGame\math\Vector3.h" />
-    <ClInclude Include="C:\KamataEngine\DirectXGame\math\Vector4.h" />
     <ClInclude Include="C:\KamataEngine\DirectXGame\2d\ImGuiManager.h" />
     <ClInclude Include="C:\KamataEngine\DirectXGame\base\StringUtility.h">
       <Filter>KamataEngine\Include</Filter>
     </ClInclude>
+    <ClInclude Include="C:\KamataEngine\DirectXGame\math\Vector4.h">
+      <Filter>math</Filter>
+    </ClInclude>
+    <ClInclude Include="C:\KamataEngine\DirectXGame\math\Vector3.h">
+      <Filter>math</Filter>
+    </ClInclude>
+    <ClInclude Include="C:\KamataEngine\DirectXGame\math\Vector2.h">
+      <Filter>math</Filter>
+    </ClInclude>
+    <ClInclude Include="C:\KamataEngine\DirectXGame\math\Matrix4x4.h">
+      <Filter>math</Filter>
+    </ClInclude>
+    <ClInclude Include="Particle.h" />
+    <ClInclude Include="Enemy.h">
+      <Filter>enemy</Filter>
+    </ClInclude>
+    <ClInclude Include="EnemyBullet.h">
+      <Filter>enemy</Filter>
+    </ClInclude>
+    <ClInclude Include="Player.h">
+      <Filter>palyer</Filter>
+    </ClInclude>
+    <ClInclude Include="PlayerBullet.h">
+      <Filter>palyer</Filter>
+    </ClInclude>
+    <ClInclude Include="IScene.h">
+      <Filter>scene</Filter>
+    </ClInclude>
+    <ClInclude Include="SceneDefine.h" />
+    <ClInclude Include="TitleScene.h" />
+    <ClInclude Include="Game.h" />
+    <ClInclude Include="ClearScene.h" />
+    <ClInclude Include="SceneManager.h" />
   </ItemGroup>
 </Project>
