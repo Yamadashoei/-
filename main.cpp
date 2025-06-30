@@ -68,7 +68,7 @@ int WINAPI WinMain(HINSTANCE, HINSTANCE, LPSTR, int) {
 
     auto ResetGame = [&]() {
         player = { {640, 600}, texPlayer };
-        enemy = { {640, 100}, texEnemy, 100, 2.0f, false, 0 };
+        enemy = { {640, 100}, texEnemy, 100, 5.0f, false, 0 };
         bullets.clear();
         enemyShotTimer = 0.0f;
         showExplosion = false;
@@ -103,7 +103,7 @@ int WINAPI WinMain(HINSTANCE, HINSTANCE, LPSTR, int) {
         switch (scene) {
         case Scene_Title:
             Novice::DrawSprite(0, 0, texBG, 1, 1, 0.0f, 0xFFFFFFFF);
-            Novice::DrawSprite(1280 / 2 - 320, 720 / 2 - 180, texTitle, 1, 1, 0.0f, 0xFFFFFFFF);
+            Novice::DrawSprite(0, 0, texTitle, 1, 1, 0.0f, 0xFFFFFFFF);
             if (preKeys[DIK_RETURN] == 0 && keys[DIK_RETURN]) {
                 ResetGame();
                 scene = Scene_Game;
@@ -112,8 +112,8 @@ int WINAPI WinMain(HINSTANCE, HINSTANCE, LPSTR, int) {
 
         case Scene_Game: {
             Novice::DrawSprite(0, 0, texBG, 1, 1, 0.0f, 0xFFFFFFFF);
-            int earthX = 640 - 256 / 2;
-            int earthY = 720 - 128;
+            int earthX = 0;
+            int earthY = 620;
             Novice::DrawSprite(earthX, earthY, texEarth, 1.0f, 1.0f, 0.0f, 0xFFFFFFFF);
 
             if (keys[DIK_W]) player.pos.y -= 5;
@@ -135,7 +135,7 @@ int WINAPI WinMain(HINSTANCE, HINSTANCE, LPSTR, int) {
                 enemy.speedX *= -1;
             }
 
-            enemyShotTimer += 1.0f / 60.0f;
+            enemyShotTimer += 1.0f / 30.0f;
             if (enemyShotTimer >= 3.0f) {
                 bullets.push_back({ {enemy.pos.x, enemy.pos.y + 64}, {0, 10}, true });
                 enemyShotTimer = 0.0f;
@@ -166,12 +166,13 @@ int WINAPI WinMain(HINSTANCE, HINSTANCE, LPSTR, int) {
                     float dx = player.pos.x - it->pos.x;
                     float dy = player.pos.y - it->pos.y;
                     float distSq = dx * dx + dy * dy;
-                    if (distSq < 32 * 32) {
+                    if (distSq < 128 * 128) {
                         scene = Scene_GameOver;
                         it = bullets.erase(it);
                         continue;
                     }
                 }
+
 
                 if (it->pos.y < -50 || it->pos.y > 800) {
                     it = bullets.erase(it);
@@ -212,7 +213,7 @@ int WINAPI WinMain(HINSTANCE, HINSTANCE, LPSTR, int) {
             Novice::DrawSprite((int)(player.pos.x - 32), (int)(player.pos.y - 32), player.texture, 1, 1, 0.0f, 0xFFFFFFFF);
 
             Novice::DrawLine(0, moveAreaTop, 1280, moveAreaTop, 0xFF0000FF);
-           // Novice::DrawLine(0, moveAreaBottom, 1280, moveAreaBottom, 0xFF0000FF);
+            //Novice::DrawLine(0, moveAreaBottom, 1280, moveAreaBottom, 0xFF0000FF);
 
             unsigned int hpColor = 0x00FF00FF;
             if (enemy.hp <= 80 && enemy.hp > 30) hpColor = 0x0000FFFF;
@@ -227,7 +228,7 @@ int WINAPI WinMain(HINSTANCE, HINSTANCE, LPSTR, int) {
 
         case Scene_GameOver:
             Novice::DrawSprite(0, 0, texBG, 1, 1, 0.0f, 0xFFFFFFFF);
-            Novice::DrawSprite(1280 / 2 - 320, 720 / 2 - 180, texGameOver, 1, 1, 0.0f, 0xFFFFFFFF);
+            Novice::DrawSprite(0, 0, texGameOver, 1, 1, 0.0f, 0xFFFFFFFF);
             if (preKeys[DIK_RETURN] == 0 && keys[DIK_RETURN]) {
                 scene = Scene_Title;
             }
@@ -235,7 +236,7 @@ int WINAPI WinMain(HINSTANCE, HINSTANCE, LPSTR, int) {
 
         case Scene_Clear:
             Novice::DrawSprite(0, 0, texBG, 1, 1, 0.0f, 0xFFFFFFFF);
-            Novice::DrawSprite(1280 / 2 - 320, 720 / 2 - 180, texClear, 1, 1, 0.0f, 0xFFFFFFFF);
+            Novice::DrawSprite(0, 0, texClear, 1, 1, 0.0f, 0xFFFFFFFF);
             if (preKeys[DIK_RETURN] == 0 && keys[DIK_RETURN]) {
                 scene = Scene_Title;
             }
