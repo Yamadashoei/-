@@ -2,7 +2,7 @@
 #include <Vector2.h>
 #include <list>
 
-const char kWindowTitle[] = "2Dシューティング";
+const char kWindowTitle[] = "ヤマダショウエイ";
 
 enum Scene {
     Scene_Title,
