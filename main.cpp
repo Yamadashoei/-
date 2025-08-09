@@ -4,6 +4,7 @@
 
 const char kWindowTitle[] = "ヤマダショウエイ";
 
+//
 enum Scene {
     Scene_Title,
     Scene_Game,
